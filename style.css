@@ -32,17 +32,46 @@ section {
     border-radius: 10px;
 }
 
-form {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+section h2 {
+    margin-bottom: 10px;
 }
 
-input {
-    flex: 1;
+section p {
+    line-height: 1.5;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    background-color: white;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #999;
 }
 
 button {
@@ -56,6 +85,190 @@ button:hover {
     opacity: 0.8;
 }
 
+form button {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
 #habitList {
     margin-top: 15px;
+}
+
+.habit-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.habit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.habit-info span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.habit-info small {
+    font-size: 13px;
+    color: #777;
+}
+
+.category {
+    font-size: 12px !important;
+    color: #555 !important;
+    background-color: #eeeeee;
+    padding: 3px 8px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #81c784;
+    border-radius: 5px;
+}
+
+.habit-card button {
+    font-size: 16px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #c8e6c9;
+    font-weight: bold;
+}
+
+.habit-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.edit-btn {
+    background-color: #e3f2fd !important;
+}
+
+.delete-btn {
+    background-color: #ffebee !important;
+}
+
+.search-box {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.filters button {
+    padding: 7px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+.filters button:hover {
+    background-color: #ddd;
+}
+
+.progress-summary {
+    margin-bottom: 20px;
+}
+
+.progress-summary h3 {
+    margin-bottom: 5px;
+}
+
+.progress-summary p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.overall-progress {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.overall-progress-bar {
+    width: 70%;
+    height: 100%;
+    background-color: #81c784;
+    border-radius: 5px;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #777;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .habit-card {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .habit-info span {
+        font-size: 14px;
+    }
+
+    .habit-card button {
+        font-size: 14px;
+        padding: 7px 10px;
+    }
+
+    .habit-actions {
+        flex-wrap: wrap;
+        gap: 4px;
+        justify-content: flex-end;
+    }
+
+    .habit-actions button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
 }

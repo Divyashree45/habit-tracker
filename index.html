@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,34 +19,156 @@
 
     <main>
 
+        <!-- Add Habit Section -->
         <section>
             <h2>Add a New Habit</h2>
 
             <form id="habitForm">
 
-                <label for="habitName">Habit Name</label>
-                <input 
-                    type="text" 
-                    id="habitName" 
-                    placeholder="Enter a habit"
-                >
+                <div class="form-group">
+                    <label for="habitName">Habit Name:</label>
+
+                    <input
+                        type="text"
+                        id="habitName"
+                        placeholder="Enter your habit"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="habitFrequency">Frequency:</label>
+
+                    <select id="habitFrequency" required>
+                        <option value="">Select frequency</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
 
                 <button type="submit">Add Habit</button>
 
             </form>
         </section>
 
+
+        <!-- My Habits Section -->
         <section>
+
             <h2>My Habits</h2>
 
-            <div id="habitList">
-                <!-- Habits will appear here using JavaScript -->
+            <!-- Search -->
+            <input
+                type="text"
+                class="search-box"
+                placeholder="Search habits..."
+            >
+
+            <!-- Filters -->
+            <div class="filters">
+                <button>All</button>
+                <button>Daily</button>
+                <button>Weekly</button>
             </div>
+
+
+            <!-- Weekly Progress -->
+            <div class="progress-summary">
+
+                <h3>Weekly Progress</h3>
+
+                <p>5 of 7 habits completed</p>
+
+                <div class="overall-progress">
+                    <div class="overall-progress-bar"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Dynamic Habit List -->
+            <div id="habitList">
+
+                <!-- Existing example habits -->
+
+                <div class="habit-card">
+
+                    <div class="habit-info">
+
+                        <span class="category">Health</span>
+
+                        <span>Drink Water</span>
+
+                        <small>Daily • 5 day streak</small>
+
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="habit-actions">
+
+                        <button>Completed</button>
+
+                        <button class="edit-btn">Edit</button>
+
+                        <button class="delete-btn">Delete</button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="habit-card">
+
+                    <div class="habit-info">
+
+                        <span class="category">Fitness</span>
+
+                        <span>Exercise</span>
+
+                        <small>Daily • 3 day streak</small>
+
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="habit-actions">
+
+                        <button>Completed</button>
+
+                        <button class="edit-btn">Edit</button>
+
+                        <button class="delete-btn">Delete</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Empty Message -->
+            <p class="empty-message">
+                No habits found. Add a new habit to get started!
+            </p>
+
         </section>
 
     </main>
 
+
+    <!-- Footer -->
+    <footer>
+        <p>Habit Tracker © 2026</p>
+    </footer>
+
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
